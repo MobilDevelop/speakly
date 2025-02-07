@@ -4,7 +4,7 @@ import 'package:speakly/presentantion/pages/splash/splash_page.dart';
 import 'index_routes.dart';
 
 final GoRouter router = GoRouter(
-    initialLocation: Routes.splash.path,
+    initialLocation: Routes.auth.path,
     debugLogDiagnostics: true,
     routes: <GoRoute>[
 

@@ -18,7 +18,7 @@ class Helper{
 
   RegExp regExp = RegExp(p);
 
-  return !regExp.hasMatch(em);
+  return regExp.hasMatch(em);
 }
 
 

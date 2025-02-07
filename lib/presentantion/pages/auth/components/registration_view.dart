@@ -9,20 +9,16 @@ import 'package:speakly/presentantion/assets/res/screen_size.dart';
 import 'package:speakly/presentantion/assets/theme/app_theme.dart';
 import 'package:speakly/presentantion/components/button/main_button.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({
-    super.key, required this.emailController, required this.passwordController, required this.visible, required this.checked, 
-    required this.visiblePress, required this.chechPress, required this.loginPress, required this.docPress, 
-    required this.googlePress, required this.successPress,required this.errorEmail
+class RegistrationView extends StatelessWidget {
+  const RegistrationView({
+    super.key, required this.emailController, required this.checked, required this.chechPress, required this.loginPress, 
+    required this.docPress,required this.googlePress, required this.successPress,required this.errorEmail
   });
   final TextEditingController emailController;
-  final TextEditingController passwordController;
   
-  final bool visible;
   final bool checked;
   final bool errorEmail;
 
-  final VoidCallback visiblePress;
   final VoidCallback chechPress;
   final VoidCallback loginPress;
   final VoidCallback docPress;
@@ -37,11 +33,11 @@ class LoginView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Gap(ScreenSize.h30),
-          Text("Welcome back 👋",style: AppTheme.data.textTheme.displayLarge!.copyWith(fontSize: ScreenSize.sp30)),
-          Text("Please enter your email & password to log in.",style: AppTheme.data.textTheme.titleSmall),
+          Gap(ScreenSize.h50),
+          Text("Hello there 👋",style: AppTheme.data.textTheme.displayLarge!.copyWith(fontSize: ScreenSize.sp30)),
+          Text("Please enter your email & password to create an account.",style: AppTheme.data.textTheme.titleSmall),
 
-          Gap(ScreenSize.h30),
+          Gap(ScreenSize.h50),
           Text(" Email",style: AppTheme.data.textTheme.bodyMedium!.copyWith(color: errorEmail?AppTheme.colors.red:AppTheme.colors.black,fontSize: ScreenSize.sp12,fontWeight: FontWeight.w700)),
           Gap(ScreenSize.h5),
           Row(
@@ -66,34 +62,7 @@ class LoginView extends StatelessWidget {
           ),
           Container(height: 1,width: double.infinity,color: errorEmail?AppTheme.colors.red:AppTheme.colors.primary),
 
-         Gap(ScreenSize.h25),
-          Text(" Password",style: AppTheme.data.textTheme.bodyMedium!.copyWith(fontSize: ScreenSize.sp12,fontWeight: FontWeight.w700)),
-          Gap(ScreenSize.h5),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: passwordController,
-                  style: AppTheme.data.textTheme.titleSmall,
-                  keyboardType: TextInputType.text,
-                  obscureText: !visible,
-                  obscuringCharacter: "●",
-                  decoration: InputDecoration(
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(horizontal: ScreenSize.h4),
-                    hintText: "Password",
-                    hintStyle: AppTheme.data.textTheme.titleLarge!.copyWith(color: AppTheme.colors.grey1,fontWeight: FontWeight.w700)
-                  ),
-                ),
-              ),
-              IconButton(onPressed:visiblePress, 
-              icon: Icon(visible?Icons.visibility:Icons.visibility_off,color: AppTheme.colors.grey1,size: ScreenSize.h20)),
-            ],
-          ),
-          Container(height: 1,width: double.infinity,color: AppTheme.colors.primary),
-
-          Gap(ScreenSize.h20),
+          Gap(ScreenSize.h40),
           Row(
             children: [
               IconButton(onPressed: chechPress, icon: SvgPicture.asset(checked?AppIcons.checkOn:AppIcons.checkOff)),
@@ -130,11 +99,11 @@ class LoginView extends StatelessWidget {
               text: TextSpan(
               children: [
                 TextSpan(
-                  text: "Don't have an account?  ",
+                  text: "Already have an account?  ",
                   style: AppTheme.data.textTheme.bodyLarge
                 ),
                 TextSpan(
-                  text: " Sign up",
+                  text: "Log in",
                   style: AppTheme.data.textTheme.titleMedium!.copyWith(color: AppTheme.colors.primary),
                   recognizer: TapGestureRecognizer()..onTap =()=>loginPress()
                 )
@@ -179,7 +148,7 @@ class LoginView extends StatelessWidget {
            Gap(ScreenSize.h30),
            Container(height: 1,width: double.infinity, color: AppTheme.colors.greysoft), 
 
-           Gap(ScreenSize.h25),
+           Gap(ScreenSize.h35),
            MainButton(
             text: "Continue", 
             borderRadius: ScreenSize.r25,
