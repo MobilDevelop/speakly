@@ -30,8 +30,7 @@ class RegistrationView extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: ScreenSize.h10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           Gap(ScreenSize.h50),
           Text("Hello there 👋",style: AppTheme.data.textTheme.displayLarge!.copyWith(fontSize: ScreenSize.sp30)),

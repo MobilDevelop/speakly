@@ -14,6 +14,7 @@ dependencies:
 
   # UI
   flutter_easyloading: ^3.0.5
+  pin_code_fields: ^8.0.1
   flutter_svg: ^2.0.17
   gap: ^3.0.1
 
@@ -24,6 +25,9 @@ dependencies:
   # Helpers
   flutter_screenutil: ^5.9.3
   flutter_dotenv: ^5.2.1
+  mask_text_input_formatter: ^2.9.0
+  image_picker: ^1.1.2
+  flutter_exif_rotation: ^0.5.2
 
   # State management
   flutter_bloc: ^8.1.2

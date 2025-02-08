@@ -17,7 +17,7 @@ class _LoadingAnimationState extends State<LoadingAnimation>with SingleTickerPro
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: Duration(seconds: 2),)..repeat();
+    _controller = AnimationController(vsync: this, duration: Duration(seconds: 3))..repeat();
   }
 
   @override
@@ -45,8 +45,8 @@ class _LoadingAnimationState extends State<LoadingAnimation>with SingleTickerPro
             angle: _controller.value * 2.3 * pi,
             child: Stack(
               alignment: Alignment.center,
-              children: List.generate(8, (index) {
-                final angle = (index / 8) * 2.5 * pi;
+              children: List.generate(7, (index) {
+                final angle = (index / 7) * 2 * pi;
                 final radius = 4 + index * 1.1;
                 final offset = Offset( 40 * cos(angle), 40 * sin(angle));
 

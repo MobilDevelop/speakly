@@ -23,6 +23,7 @@ class AppWidget extends StatelessWidget {
       } else {
         return RequestsInspector(
           showInspectorOn: ShowInspectorOn.LongPress,
+          enabled: false,
           hideInspectorBanner: true,
           child: MaterialApp.router(
             title: 'Speakly',

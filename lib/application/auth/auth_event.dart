@@ -1,7 +1,10 @@
 
 abstract class AuthEvent {}
 
-class LoginEvent extends AuthEvent{}
+class LoginEvent extends AuthEvent{
+  final String email;
+  LoginEvent({this.email = ""});
+}
 
 class RegistrationEvent extends AuthEvent{}
 
@@ -24,4 +27,34 @@ class AuthSuccessEvent extends AuthEvent{
  AuthSuccessEvent({required this.type,required this.text});
 }
 
+class VerifyCodeConfirm extends AuthEvent{
+  final String code;
+  final String email;
+  VerifyCodeConfirm({required this.code,required this.email});
+}
+
+class CreateUserPasswordVisible extends AuthEvent{
+  final int type;
+
+  CreateUserPasswordVisible({required this.type});
+}
+
+class GenderSelect extends AuthEvent{
+  final int genderType;
+
+  GenderSelect({required this.genderType});
+}
+
+class GetUserImage extends AuthEvent{
+  final int selectType;
+
+  GetUserImage({required this.selectType});
+}
+
+class CreateUserEvent extends AuthEvent{
+  
+}
+
 class GoogleEvent extends AuthEvent{}
+
+class OTPCode extends AuthEvent {}

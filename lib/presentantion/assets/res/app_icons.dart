@@ -19,6 +19,8 @@ class AppIcons {
   static const String intro2 = 'assets/images/2.png';
   static const String intro3 = 'assets/images/3.png';
   static const String google = 'assets/images/google.png';
+  static const String ubzFlag = 'assets/images/uz.png';
+  static const String user = 'assets/images/user.png';
 
 
 }

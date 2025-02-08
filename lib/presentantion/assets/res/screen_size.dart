@@ -221,6 +221,7 @@ class ScreenSize {
     sp24 = 24.sp;
     sp25 = 25.sp;
     sp24 = 24.sp;
+    sp28 = 28.sp;
     sp30 = 30.sp;
     sp32 = 32.sp;
     sp35 = 35.sp;
