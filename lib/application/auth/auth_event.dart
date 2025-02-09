@@ -51,8 +51,11 @@ class GetUserImage extends AuthEvent{
   GetUserImage({required this.selectType});
 }
 
-class CreateUserEvent extends AuthEvent{
-  
+class CreateUserEvent extends AuthEvent{}
+
+class UpdateTime extends AuthEvent{
+  int newTime;
+  UpdateTime({required this.newTime});
 }
 
 class GoogleEvent extends AuthEvent{}

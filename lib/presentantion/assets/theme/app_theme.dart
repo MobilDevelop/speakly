@@ -35,7 +35,7 @@ class AppTheme {
       headlineMedium: TextStyle(
         fontSize: 18.sp,
         color: colors.text900,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w600,
       ),
       headlineSmall: TextStyle(
         fontSize: 24.sp,

@@ -28,14 +28,14 @@ class AuthService {
       Response response = await dio.post(AppContatants.login,data: {"email":email,"password":password});
       return Future.value(response.data['message']);
     } catch (e) {
-      return Future.value("error");
+      return Future.value("");
     }
   }
 
   Future<String> createUser(FormData data)async{
     try {
       Response response = await dio.post(AppContatants.createUser,data: data);
-      return Future.value(response.data['token']);
+      return Future.value(response.data['message']);
     } catch (e) {
       return Future.value("error");
     }

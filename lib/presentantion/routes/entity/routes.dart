@@ -19,6 +19,11 @@ class Routes implements Coordinate {
     path: '/auth',
   );
 
+  static const welcome = Routes._(
+    name: 'welcome_page',
+    path: '/welcome',
+  );
+
   static const registration = Routes._(
     name: 'registration_page',
     path: '/registration',

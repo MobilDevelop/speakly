@@ -7,8 +7,8 @@ class AppContatants{
 
   static String registration = "${authAdd}register/email/send_code";
   static String verifyCode = "${authAdd}register/email/verify";
-  static String login = "${authAdd}common/auth/login";
-  static String createUser = "subscriber/user/profile";
+  static String login = "${authAdd}login";
+  static String createUser = "${authAdd}register/email/sign_up";
 
   static String appVersion = '1.0.0';
 

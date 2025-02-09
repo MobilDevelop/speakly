@@ -1,10 +1,12 @@
 import 'package:speakly/presentantion/pages/auth/auth_page.dart';
 import 'package:speakly/presentantion/pages/intro/intro_page.dart';
+import 'package:speakly/presentantion/pages/main/main_page.dart';
 import 'package:speakly/presentantion/pages/splash/splash_page.dart';
+import 'package:speakly/presentantion/pages/welcome/welcome_page.dart';
 import 'index_routes.dart';
 
 final GoRouter router = GoRouter(
-    initialLocation: Routes.auth.path,
+    initialLocation: Routes.welcome.path,
     debugLogDiagnostics: true,
     routes: <GoRoute>[
 
@@ -25,6 +27,26 @@ final GoRouter router = GoRouter(
           context: _,
           state: state,
           child: const AuthPage(),
+        ),
+       ),
+
+       GoRoute(
+        name: Routes.main.name,
+        path: Routes.main.path,
+        pageBuilder: (_, state) => buildPageWithDefaultTransition2<void>(
+          context: _,
+          state: state,
+          child: const MainPage(),
+        ),
+       ),
+
+       GoRoute(
+        name: Routes.welcome.name,
+        path: Routes.welcome.path,
+        pageBuilder: (_, state) => buildPageWithDefaultTransition2<void>(
+          context: _,
+          state: state,
+          child: const WelcomePage(),
         ),
        ),
 

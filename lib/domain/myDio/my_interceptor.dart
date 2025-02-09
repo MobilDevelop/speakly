@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:speakly/infrastructure/local_source/local_source.dart';
 
 class MyInterceptor extends Interceptor{
   MyInterceptor();
@@ -28,7 +29,8 @@ class MyInterceptor extends Interceptor{
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     options.headers['Content-Type'] = 'application/json';
-    options.headers['Accept'] = 'application/json'; 
+    options.headers['Accept'] = 'application/json';
+    options.headers['Authorization'] = await LocalSource.getInfo(key: "token");
     options.baseUrl = dotenv.env['mainUrl']!;
     super.onRequest(options, handler);
    }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:speakly/presentantion/routes/index_routes.dart';
@@ -19,15 +21,16 @@ class AuthLogin extends AuthState{
   bool checked;
   bool errorEmail;
 
-  AuthLogin({this.visibility = false, this.checked = true, this.errorEmail = false,super.emailController,TextEditingController? passwordController}):
+  AuthLogin({this.visibility = false, this.checked = true, this.errorEmail = false,super.loading ,super.emailController,TextEditingController? passwordController}):
   passwordController = passwordController ?? TextEditingController();
 
-  AuthLogin copyWith({TextEditingController? emailController,TextEditingController? passwordController,bool? visibility,bool? checked,bool? errorEmail}){
+  AuthLogin copyWith({TextEditingController? emailController,TextEditingController? passwordController,bool? visibility,bool? checked,bool? errorEmail,bool? loading}){
     return AuthLogin(
       emailController: emailController?? this.emailController, 
       passwordController: passwordController?? this.passwordController, 
       visibility: visibility?? this.visibility, 
       errorEmail: errorEmail?? this.errorEmail,
+      loading: loading?? this.loading,
       checked: checked?? this.checked);
   }
 }
@@ -50,14 +53,16 @@ class AuthRegistration extends AuthState{
 class OpeanSuccesCode extends AuthState{
   final String email;
   final int time;
+  StreamSubscription<int>? stream;
 
-  OpeanSuccesCode({required this.email,this.time = 120,super.loading});
+  OpeanSuccesCode({required this.email,this.time = 120,super.loading,this.stream});
 
-  OpeanSuccesCode copyWith({String? email, int? time, bool? loading}){
+  OpeanSuccesCode copyWith({String? email, int? time, bool? loading,StreamSubscription<int>? stream}){
     return OpeanSuccesCode(
       email: email?? this.email, 
       loading: loading ?? this.loading,
-      time: time?? this.time);
+      time: time?? this.time,
+      stream: stream ?? this.stream);
   } 
 }
 
@@ -101,7 +106,7 @@ class CreateUser extends AuthState{
     "password": passwordController.text.trim(),
     "password_confirmation": confirmPasswordController.text.trim(),
     "profile[full_name]": fullNameController.text.trim(),
-    "profile[gender]": genderType,
+    "profile[gender]": genderType==1?"male":"female",
     "profile[phone]": phoneController.text,
     "profile[image]": await MultipartFile.fromFile(userImage!.path, filename: userImage!.name),
   });

@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:image_picker/image_picker.dart';
@@ -6,6 +5,7 @@ import 'package:speakly/application/auth/auth_event.dart';
 import 'package:speakly/application/auth/auth_state.dart';
 import 'package:speakly/domain/provider/auth_service.dart';
 import 'package:speakly/infrastructure/helper/helper.dart';
+import 'package:speakly/infrastructure/local_source/local_source.dart';
 
 class AuthBloc extends Bloc<AuthEvent,AuthState>{
   AuthBloc() : super(AuthInitial()){
@@ -35,7 +35,19 @@ class AuthBloc extends Bloc<AuthEvent,AuthState>{
         emit((state as AuthRegistration).copyWith(errorEmail: !check));
         }
       }else{
-        if(state is AuthRegistration){
+        if(state is AuthLogin){
+          final current = state as AuthLogin;
+          emit(current.copyWith(loading: true));
+
+          String token = await AuthService().login(current.emailController.text,current.passwordController.text);
+          emit((state as AuthRegistration).copyWith(loading: false));
+
+          if(token.isNotEmpty){
+            LocalSource.putInfo(key: "token", json: token);
+            }  
+        
+
+        } else if(state is AuthRegistration){
           final current = state as AuthRegistration;
           emit(current.copyWith(loading: true));
           
@@ -45,6 +57,7 @@ class AuthBloc extends Bloc<AuthEvent,AuthState>{
           if(message!="error"){
             EasyLoading.showSuccess(message);
             emit(OpeanSuccesCode(email: current.emailController.text));
+            await Future.delayed(Duration(milliseconds: 200));
             add(OTPCode());
           }  
         }
@@ -67,7 +80,8 @@ class AuthBloc extends Bloc<AuthEvent,AuthState>{
       emit((state as OpeanSuccesCode).copyWith(loading: true));
       
       String message = await AuthService().verifyCode(event.email, event.code);
-      emit((state as OpeanSuccesCode).copyWith(loading: false));
+      (state as OpeanSuccesCode).stream!.cancel();
+      emit((state as OpeanSuccesCode).copyWith(loading: false,stream: null));
       if(message!="error"){
         EasyLoading.showSuccess(message);
         emit(CreateUser(code: event.code));
@@ -96,17 +110,26 @@ class AuthBloc extends Bloc<AuthEvent,AuthState>{
     /// OTP code verification 
     on<OTPCode>((event, emit) {
       final current = state as OpeanSuccesCode;
-       emit.forEach<int>(
-        Helper().timerStream(current.time), 
-        onData:(newTime)=>current.copyWith(time: newTime));
+      current.stream = Helper().timerStream(current.time).listen((newTime) {
+        add(UpdateTime(newTime: newTime));
+      });
     });
+
+    on<UpdateTime>((event, emit) {
+      final current = state as OpeanSuccesCode;
+      emit(current.copyWith(time: event.newTime));
+     });
 
 
     /// create user service 
     on<CreateUserEvent>((event, emit)async{
       final current = state as CreateUser;
-      String token = await AuthService().createUser(await current.toFormData(current.code, current.emailController.text));
-      print(token);
+      emit(current.copyWith(loading: true));
+      String message = await AuthService().createUser(await current.toFormData(current.code, current.emailController.text));
+      emit(current.copyWith(loading: false));
+      if(message!="error"){
+        EasyLoading.showSuccess(message);
+      }
     });
 
     /// choose user picture
