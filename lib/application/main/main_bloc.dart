@@ -4,8 +4,8 @@ import 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
   MainBloc() : super(MainInitial()) {
-    on<MainEvent>((event, emit) {
-      // TODO: implement event handler
+    on<MainBottomItem>((event, emit) {
+      emit((state as MainInitial).copyWith(index: event.index));
     });
   }
 }

@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:speakly/application/appManager/app_manager_cubit.dart';
+import 'package:speakly/application/home/home_bloc.dart';
+import 'package:speakly/application/main/main_bloc.dart';
+import 'package:speakly/application/profile/profile_bloc.dart';
+import 'package:speakly/application/progress/progress_bloc.dart';
+import 'package:speakly/application/resources/resources_bloc.dart';
 import 'package:speakly/presentantion/assets/asset_index.dart';
 import 'package:speakly/presentantion/pages/app_widget.dart';
 import 'infrastructure/common/app_init.dart';
@@ -46,6 +51,11 @@ class _MyAppState extends State<MyApp>{
     return MultiBlocProvider(
         providers: [
           BlocProvider<AppManagerCubit>(create: (context) => AppManagerCubit()..init()),
+          BlocProvider<MainBloc>(create: (context) => MainBloc()),
+          BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
+          BlocProvider<ResourcesBloc>(create: (context) => ResourcesBloc()),
+          BlocProvider<ProgressBloc>(create: (context) => ProgressBloc()),
+          BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),
         ], 
         child: ScreenUtilInit(
           minTextAdapt: true,
