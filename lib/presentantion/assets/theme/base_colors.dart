@@ -2,8 +2,10 @@ import 'dart:ui';
 
 abstract class BaseColors {
   const BaseColors();
+  
+  Color get primary => const Color.fromRGBO(89, 69, 158, 1);
+  Color get secondary => const Color.fromRGBO(157, 129, 255, 1);
 
-  Color get primary => const Color.fromRGBO(157, 129, 255, 1);
 
   Color get stroke => const Color.fromRGBO(50, 58, 70, 1);
   Color get information => const Color.fromRGBO(55, 135, 255, 1);

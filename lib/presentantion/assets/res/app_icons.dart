@@ -11,6 +11,7 @@ class AppIcons {
   static const String email = "assets/icons/message.svg";
   static const String checkOn = "assets/icons/checkOn.svg";
   static const String checkOff = "assets/icons/checkOff.svg";
+  static const String exam = "assets/icons/exam.svg";
 
 
   
@@ -29,6 +30,10 @@ class AppIcons {
   static const String image3 = 'assets/images/image3.png';
   static const String image4 = 'assets/images/image4.png';
   static const String image5 = 'assets/images/image5.png';
+  static const String logoP = 'assets/images/logo_primary.png';
+  static const String logoW = 'assets/images/logo_white.png';
+  static const String wave = 'assets/images/wave.png';
+  static const String wave1 = 'assets/images/wave_2.png';
 
 
 }
