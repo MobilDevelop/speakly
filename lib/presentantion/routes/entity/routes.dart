@@ -38,6 +38,11 @@ class Routes implements Coordinate {
     name: 'intro_page',
     path: '/intro',
   );
+
+  static const instructions = Routes._(
+    name: 'instructions_page',
+    path: '/instructions',
+  );
   
 
   @override

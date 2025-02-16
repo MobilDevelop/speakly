@@ -73,7 +73,7 @@ class MainButton extends StatelessWidget {
             : EdgeInsets.zero,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius??ScreenSize.r15),
-          color: color ?? AppTheme.colors.primary,
+          color: color ?? AppTheme.colors.secondary,
           boxShadow: [
             BoxShadow(
               color: AppTheme.colors.black.withOpacity(.09),

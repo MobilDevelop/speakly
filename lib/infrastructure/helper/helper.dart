@@ -102,4 +102,9 @@ class Helper{
     return image;
   }
 
+  static String cleanText(String text){
+
+    return text.split('\n').map((line) => line.trim()).where((line) => line.isNotEmpty).join('\n');
+  }
+
 }

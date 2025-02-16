@@ -1,4 +1,5 @@
 import 'package:speakly/presentantion/pages/auth/auth_page.dart';
+import 'package:speakly/presentantion/pages/instructions/instructions_page.dart';
 import 'package:speakly/presentantion/pages/intro/intro_page.dart';
 import 'package:speakly/presentantion/pages/main/main_page.dart';
 import 'package:speakly/presentantion/pages/splash/splash_page.dart';
@@ -6,15 +7,15 @@ import 'package:speakly/presentantion/pages/welcome/welcome_page.dart';
 import 'index_routes.dart';
 
 final GoRouter router = GoRouter(
-    initialLocation: Routes.main.path,
+    initialLocation: Routes.splash.path,
     debugLogDiagnostics: true,
     routes: <GoRoute>[
 
        GoRoute(
         name: Routes.splash.name,
         path: Routes.splash.path,
-        pageBuilder: (_, state) => buildPageWithDefaultTransition1<void>(
-          context: _,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition1<void>(
+          context: context,
           state: state,
           child: const SplashPage(),
         ),
@@ -23,8 +24,8 @@ final GoRouter router = GoRouter(
        GoRoute(
         name: Routes.auth.name,
         path: Routes.auth.path,
-        pageBuilder: (_, state) => buildPageWithDefaultTransition2<void>(
-          context: _,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition2<void>(
+          context: context,
           state: state,
           child: const AuthPage(),
         ),
@@ -33,8 +34,8 @@ final GoRouter router = GoRouter(
        GoRoute(
         name: Routes.main.name,
         path: Routes.main.path,
-        pageBuilder: (_, state) => buildPageWithDefaultTransition2<void>(
-          context: _,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition2<void>(
+          context: context,
           state: state,
           child: const MainPage(),
         ),
@@ -43,8 +44,8 @@ final GoRouter router = GoRouter(
        GoRoute(
         name: Routes.welcome.name,
         path: Routes.welcome.path,
-        pageBuilder: (_, state) => buildPageWithDefaultTransition2<void>(
-          context: _,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition2<void>(
+          context: context,
           state: state,
           child: const WelcomePage(),
         ),
@@ -53,16 +54,26 @@ final GoRouter router = GoRouter(
        GoRoute(
         name: Routes.intro.name,
         path: Routes.intro.path,
-        pageBuilder: (_, state) => buildPageWithDefaultTransition2<void>(
-          context: _,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition2<void>(
+          context: context,
           state: state,
           child: const IntroPage(),
         ),
        ),
 
+       GoRoute(
+        name: Routes.instructions.name,
+        path: Routes.instructions.path,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition2<void>(
+          context: context,
+          state: state,
+          child: InstructionsPage(type: state.extra as String),
+        ),
+       ),
+
 
     ],
-    errorBuilder: (_, state) => const SizedBox());
+    errorBuilder: (context, state) => const SizedBox());
 
 
     CustomTransitionPage buildPageWithDefaultTransition1<T>({

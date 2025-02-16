@@ -18,7 +18,7 @@ class AnimatedIndicator extends StatelessWidget {
           height: ScreenSize.h8,
           width: index == 0? ScreenSize.h45:ScreenSize.h8,
           decoration: BoxDecoration(
-            color: index == 0? AppTheme.colors.primary:AppTheme.colors.greysoft,
+            color: index == 0? AppTheme.colors.secondary:AppTheme.colors.greysoft,
             borderRadius: BorderRadius.circular(ScreenSize.r10)
           ),
         ),
@@ -29,7 +29,7 @@ class AnimatedIndicator extends StatelessWidget {
           height: ScreenSize.h8,
           width: index == 1? ScreenSize.h45:ScreenSize.h8,
           decoration: BoxDecoration(
-            color: index == 1? AppTheme.colors.primary:AppTheme.colors.greysoft,
+            color: index == 1? AppTheme.colors.secondary:AppTheme.colors.greysoft,
             borderRadius: BorderRadius.circular(ScreenSize.r10)
           ),
         ),
@@ -40,7 +40,7 @@ class AnimatedIndicator extends StatelessWidget {
           height: ScreenSize.h8,
           width: index == 2? ScreenSize.h45:ScreenSize.h8,
           decoration: BoxDecoration(
-            color: index == 2? AppTheme.colors.primary:AppTheme.colors.greysoft,
+            color: index == 2? AppTheme.colors.secondary:AppTheme.colors.greysoft,
             borderRadius: BorderRadius.circular(ScreenSize.r10)
           ),
         ),

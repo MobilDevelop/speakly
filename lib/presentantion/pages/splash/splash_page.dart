@@ -20,8 +20,8 @@ class SplashPage extends StatelessWidget {
             context.go(Routes.auth.path);
           }else if(state is SplashNextIntro){
             context.go(Routes.intro.path);
-          }else if(state is SplashNextHome){
-            
+          }else if(state is SplashNextMain){
+            context.go(Routes.main.path);
           }
         },
         builder: (context, state) {

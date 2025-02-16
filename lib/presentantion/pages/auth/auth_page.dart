@@ -10,6 +10,7 @@ import 'package:speakly/presentantion/components/animation_loading/main_loading.
 import 'package:speakly/presentantion/pages/auth/components/create_user.dart';
 import 'package:speakly/presentantion/pages/auth/components/registration_view.dart';
 import 'package:speakly/presentantion/pages/auth/components/success_code.dart';
+import 'package:speakly/presentantion/routes/index_routes.dart';
 import 'components/login_view.dart';
 import 'components/select_auth.dart';
 import 'components/select_image_type.dart';
@@ -24,7 +25,9 @@ class AuthPage extends StatelessWidget {
       backgroundColor: AppTheme.colors.white,
       body: BlocProvider(create: (context) => AuthBloc(),
       child: BlocListener<AuthBloc,AuthState>(listener: (context, state){
-
+        if(state is AuthNextMain){
+          context.go(Routes.main.path);
+        }
       },
       child: SafeArea(
         child: Stack(

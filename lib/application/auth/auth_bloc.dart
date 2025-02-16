@@ -37,13 +37,14 @@ class AuthBloc extends Bloc<AuthEvent,AuthState>{
       }else{
         if(state is AuthLogin){
           final current = state as AuthLogin;
-          emit(current.copyWith(loading: true));
+          emit((state as AuthLogin).copyWith(loading: true));
 
           String token = await AuthService().login(current.emailController.text,current.passwordController.text);
-          emit((state as AuthRegistration).copyWith(loading: false));
-
+          emit((state as AuthLogin).copyWith(loading: false));
+         
           if(token.isNotEmpty){
             LocalSource.putInfo(key: "token", json: token);
+            emit(AuthNextMain());
             }  
         
 

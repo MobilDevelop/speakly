@@ -68,7 +68,7 @@ class IntroPage extends StatelessWidget {
                         Expanded(
                             child: MainButton(
                                 text: state.index==2?"Get started":"Next",
-                                color: AppTheme.colors.primary,
+                                color: AppTheme.colors.secondary,
                                 borderRadius: ScreenSize.r25,
                                 onPressed: ()=>context.read<IntroCubit>().nextPage()))
                       ],

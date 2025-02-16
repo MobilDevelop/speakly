@@ -12,6 +12,9 @@ class AppIcons {
   static const String checkOn = "assets/icons/checkOn.svg";
   static const String checkOff = "assets/icons/checkOff.svg";
   static const String exam = "assets/icons/exam.svg";
+  static const String mic = "assets/icons/mic.svg";
+  static const String backTest = "assets/icons/back-test.svg";
+  static const String back_arrow = "assets/icons/back-back.svg";
 
 
   

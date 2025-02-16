@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:speakly/infrastructure/local_source/local_source.dart';
+import 'package:speakly/presentantion/assets/asset_index.dart';
 
 class MyInterceptor extends Interceptor{
   MyInterceptor();
@@ -19,7 +20,14 @@ class MyInterceptor extends Interceptor{
     //   await Future.delayed(const Duration(milliseconds: 600));
     //   }
     }else{
-      EasyLoading.showInfo(err.response?.data['message']);
+      Fluttertoast.showToast(
+       msg: err.response?.data['message'],
+       toastLength: Toast.LENGTH_SHORT, // Toast muddati
+       gravity: ToastGravity.CENTER, // Toast joylashuvi
+       backgroundColor: AppTheme.colors.red, // Orqa fon rangi
+       textColor: AppTheme.colors.white, // Matn rangi
+       fontSize: 14.sp,
+       );
     }
     
     super.onError(err, handler);

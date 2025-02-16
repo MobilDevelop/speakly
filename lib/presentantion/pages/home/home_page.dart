@@ -7,6 +7,7 @@ import 'package:speakly/presentantion/pages/home/components/indicator.dart';
 import 'package:speakly/presentantion/routes/index_routes.dart';
 import 'components/free_exam.dart';
 import 'components/news_items.dart';
+import 'components/test_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -66,31 +67,15 @@ class HomePage extends StatelessWidget {
           FreeExam(),
 
           Gap(ScreenSize.h30),
-          Container(
-            height: ScreenSize.h50,
-            width: double.infinity,
-            alignment: Alignment.center,
-            margin: EdgeInsets.symmetric(horizontal: ScreenSize.h25),
-            decoration: BoxDecoration(
-              color: AppTheme.colors.secondary,
-              border: Border.all(color: AppTheme.colors.primary),
-              borderRadius: BorderRadius.circular(ScreenSize.r10)
-            ),
-            child: Text("Full Speaking Test", style: AppTheme.data.textTheme.headlineSmall!.copyWith(color: AppTheme.colors.white)),
+          TestButton(
+            title: "Full Speaking Test",
+            press: ()=>context.push(Routes.instructions.path,extra: "full_exam"),
           ),
-
+          
           Gap(ScreenSize.h20),
-          Container(
-            height: ScreenSize.h50,
-            width: double.infinity,
-            alignment: Alignment.center,
-            margin: EdgeInsets.symmetric(horizontal: ScreenSize.h25),
-            decoration: BoxDecoration(
-              color: AppTheme.colors.secondary,
-              border: Border.all(color: AppTheme.colors.primary),
-              borderRadius: BorderRadius.circular(ScreenSize.r10)
-            ),
-             child: Text("Mini Speaking Test", style: AppTheme.data.textTheme.headlineSmall!.copyWith(color: AppTheme.colors.white)),
+          TestButton(
+            title: "Mini Speaking Test",
+            press: ()=>context.push(Routes.instructions.path,extra: "mini_exam"),
           ),
 
           Gap(ScreenSize.h20),

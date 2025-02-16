@@ -26,7 +26,7 @@ class AuthService {
   Future<String> login(String email,String password)async{
     try {
       Response response = await dio.post(AppContatants.login,data: {"email":email,"password":password});
-      return Future.value(response.data['message']);
+      return Future.value(response.data['token']);
     } catch (e) {
       return Future.value("");
     }

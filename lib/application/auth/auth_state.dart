@@ -111,3 +111,5 @@ class CreateUser extends AuthState{
     "profile[image]": await MultipartFile.fromFile(userImage!.path, filename: userImage!.name),
   });
 }
+
+class AuthNextMain extends AuthState{}
