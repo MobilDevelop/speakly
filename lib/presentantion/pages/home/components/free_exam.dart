@@ -15,7 +15,7 @@ class FreeExam extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(ScreenSize.r10),
       ),
-      child:SvgPicture.asset(AppIcons.exam)
+      child:SvgPicture.asset(AppIcons.exam,fit: BoxFit.contain)
     );
   }
 }

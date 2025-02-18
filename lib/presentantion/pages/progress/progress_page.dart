@@ -8,6 +8,12 @@ class ProgressPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.colors.backcolor,
+      appBar: AppBar(
+          title: Text(" Progress & Feedback",style: AppTheme.data.textTheme.headlineMedium),
+          backgroundColor: AppTheme.colors.white,
+          centerTitle: true,
+          elevation: 0,
+        ),
       body: Center(child: Text("Progress page")),
     );
   }

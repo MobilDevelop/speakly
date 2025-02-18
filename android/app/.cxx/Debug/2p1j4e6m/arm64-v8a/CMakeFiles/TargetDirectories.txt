@@ -1,0 +1,2 @@
+/Users/muhammadayubxonnomono/Documents/flutter_project/speakly/android/app/.cxx/Debug/2p1j4e6m/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/muhammadayubxonnomono/Documents/flutter_project/speakly/android/app/.cxx/Debug/2p1j4e6m/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:speakly/application/appManager/app_manager_cubit.dart';
 import 'package:speakly/application/home/home_bloc.dart';
+import 'package:speakly/application/home/home_event.dart';
 import 'package:speakly/application/main/main_bloc.dart';
 import 'package:speakly/application/profile/profile_bloc.dart';
 import 'package:speakly/application/progress/progress_bloc.dart';
@@ -52,7 +53,7 @@ class _MyAppState extends State<MyApp>{
         providers: [
           BlocProvider<AppManagerCubit>(create: (context) => AppManagerCubit()..init()),
           BlocProvider<MainBloc>(create: (context) => MainBloc()),
-          BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
+          BlocProvider<HomeBloc>(create: (context) => HomeBloc()..add(HomeFirstEvent())),
           BlocProvider<ResourcesBloc>(create: (context) => ResourcesBloc()),
           BlocProvider<ProgressBloc>(create: (context) => ProgressBloc()),
           BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),

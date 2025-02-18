@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "agro-sanoat",
+  "private_key_id": "701bc2f2c3533551811dc2fce8cd357860f6eb34",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDyKeE5udTclIYJ\nMd0iNc+P/wrgqdVriaRbLD8LeFskV1C7lGWtpfJHKlxpWZANZ5y0XI7GNMQ+mUQW\nkPTH0wy4aYeu71jU2wjBnHtmwnTVz5g0bAmyv/wC+7Dzla2motrzXVeimFtXDv90\n+rzk3eXvoa/VSUkKCpWSIIYJF9wK3nCmLC3BjLXBzZ2HT31Db2C+YpVHUFUVqoYx\n3BxzZG7BDaFDk1KINAWxy26wo4fylzzIOFtYTtZxifbpU+U9dODVX3mhqe6VIr/S\nEeR2OXGD95rnxsK0fVVgMZhYjslBvl0CTPTJ2mAW7UslJuCbqQE4qsLnkQFiOr7R\nXoURwnQrAgMBAAECggEAGr2/LkW0GMuZ5YgJGE8C5a7PP7HhbGedq6e+KoEW53Nw\n6dXgSIWrtGocHFIUkzZe2pfh+Ec5aIQ6PZeyQCKxI+gbYJjzoUWyuNaT1ewhRL8Q\n2rEXfRKwPJAYoT1lGKKhNQCYvc6/P2Tblspdc5SBYK3lIdNe6mnyzFklE/n7hYOF\nxT2aQQEwEXdDn2Du3PHv+6XV9muafdaZu9/O25JD+Hnc6SsSmtEKOIj/vH+hJ5hk\n7aIbHG+U1/1C61A5LvlEM7mxnN11ii8qTQBpliXVQ9qy+9IXvYHUpbpv21RDFtaY\nGZGU8xYVrX+Zvy6+htG9NguPlPLtzzx0HD9M1XRrqQKBgQD6w2pl8jLeUH5ftL+V\nb5uJgRVu/dONvq4Go54NpbPyDUp5FLRFaKAhzt04PqimCiYofk0rAKnfvtJklBVr\n+3P3WoEZarG9nPkHkMyLu2r7TxQ693cx/Lw2gRAVoJbYtDkaMVhcnpc7Lhs8068B\nWP1uGe0TsthFIjWEsjqsMUdrVwKBgQD3OH1isLOeHS3PZfHq8dTegXkY+jrqc0g2\nmR5NOYoofIOux3luMWIeMoySSxde4CUT7xzu89SaLO4D3MqSVLNLtpVRKT3vHbR5\nUbHIIyTvntV6hXqzkzp7h/eJYI5DbhWfoZnpwK4NVHP9BzOKTt1hQC1fYnoq7cRf\n6VJuezJNTQKBgQCwY1LtQO99J5utEIQOxoHeuBjuiMcNlontC5w6t0sbQTQYdXLU\nu+KfxVYgoRqaKNtscmMvk3jqdNyjePKUkTyiSlwzF7TMzqTxKG5o/70h5x8w1y9V\nzxRJNoGs5NgWuLbN8NXZ2IhCTY1FPRWF2iXyE3SK/atY/dYtb/0LcGJvYwKBgQDs\nBGM4H+grEEJW2UW+/kcycbsRzHsIryyG62GRalhq1IzHBKr6N20r1Sh81fGm4yii\nwkoGGoSi+Df3Ogeu8ewGYXZl+JCnQt20YPjwUBUIKsQ1507AN9PCcYkx/xtyZpuA\nPcB5+Dhyg2kEbKaY6TfSi3mFsbdeWoZ65n6K+VSJlQKBgQC32bXldCTCyFSy3Kcs\nYyVFRr6iFAlEx1pIy+cWBaZ4IkA9OXdLONiMP8Dxi1890iMXhpwDAh8UbZ31IsFG\nBoCErBOM7hfPdkLnheSjH6TXVRv90nmKtNif1WiemYPoRtAO9mxNaXDJl2FhCyUO\n7WIP9Z2eIp6iCUg8FD6dyhzmwg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "service@agro-sanoat.iam.gserviceaccount.com",
+  "client_id": "117187501306905078157",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service%40agro-sanoat.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -6,7 +6,6 @@ import 'package:speakly/application/instructions/instructions_state.dart';
 import 'package:speakly/presentantion/assets/res/app_icons.dart';
 import 'package:speakly/presentantion/components/animation_loading/main_loading.dart';
 import 'package:speakly/presentantion/routes/index_routes.dart';
-
 import 'components/exam_start_view.dart';
 import 'components/question_view.dart';
 
@@ -24,7 +23,8 @@ class InstructionsPage extends StatelessWidget {
           builder: (context, state){
             if(state is InstructionsExamStart){
               return ExamStartView( 
-                title: state.instruction.examSection == "part_one"? "Part 1":"Instruction",
+                title: state.instruction.examSection == "part_one"? "Part 1":
+                state.instruction.examSection == "part_two"?"Part 2": "Instruction",
                 desc: state.instruction.value,
                 startPress: () => state.instruction.examSection.isEmpty?
                 
@@ -40,7 +40,11 @@ class InstructionsPage extends StatelessWidget {
         BlocBuilder<InstructionsBloc,InstructionsState>(builder: (context, state) {
          if(state is InstructionQuestion){
           return QuestionView(
+            enableMic: state.enableMic,
+            isSpeech: state.isSpeech,
+            time: state.time,
             close: () => context.pop(),
+            micPress: ()=>context.read<InstructionsBloc>().add(InstructionMicPressEvent(enableMic: !state.enableMic,id: state.questionModel.id)),
           );
          } 
           return SizedBox.shrink();

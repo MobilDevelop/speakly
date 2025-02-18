@@ -3,7 +3,7 @@ abstract class MainState {
   MainState({this.index =0});
 }
 
-final class MainInitial extends MainState {
+ class MainInitial extends MainState {
   
   MainInitial({super.index});
 

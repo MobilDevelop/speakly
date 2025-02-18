@@ -45,4 +45,13 @@ class InstructionService {
       return left(FailureServerError(message: "error"));
     }
   }
+
+  Future<bool> sendAnswer(String asnwer,String question,int id)async{
+    try {
+      Response response = await dio.post(AppContatants.answer,data: {"answer": asnwer,"question": question,"section_id": id});
+      return Future.value(response.data['data']['is_complete']);
+    } catch (e) {
+      return Future.value(false);
+    }
+  }
 }

@@ -15,6 +15,7 @@ class AppIcons {
   static const String mic = "assets/icons/mic.svg";
   static const String backTest = "assets/icons/back-test.svg";
   static const String back_arrow = "assets/icons/back-back.svg";
+  static const String prfile = "assets/icons/profile_press.svg";
 
 
   

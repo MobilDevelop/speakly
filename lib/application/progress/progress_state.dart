@@ -1,3 +1,3 @@
 abstract class ProgressState {}
 
-final class ProgressInitial extends ProgressState {}
+ class ProgressInitial extends ProgressState {}

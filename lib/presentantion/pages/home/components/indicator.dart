@@ -31,7 +31,7 @@ class ArcIndicator extends StatelessWidget {
             alignment: Alignment.topCenter,
             heightFactor: 0.6,
             child: Padding(
-              padding: EdgeInsets.only(top: ScreenSize.h12),
+              padding: EdgeInsets.only(top: ScreenSize.h8),
               child: CustomPaint(
                 size: Size(185.h, 185.h),
                 painter: IndicatorPainter(value),
@@ -40,7 +40,7 @@ class ArcIndicator extends StatelessWidget {
           ),
         ),
         Positioned.fill(
-          top: ScreenSize.h45,
+          top: ScreenSize.h25,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

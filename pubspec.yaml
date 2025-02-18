@@ -3,7 +3,7 @@ description: "A new Flutter project."
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.7.0
 
 
 dependencies:
@@ -30,16 +30,17 @@ dependencies:
   flutter_exif_rotation: ^0.5.2
   fpdart: ^1.1.1
   fluttertoast: ^8.2.12
+  permission_handler: ^11.3.1
 
   # google-speech
   google_speech: ^5.3.0
-  flutter_sound: ^9.19.1
+  flutter_sound: ^9.23.1
   path_provider: ^2.1.5
   flutter_tts: ^4.2.2
 
   # State management
-  flutter_bloc: ^8.1.2
-  bloc: ^8.1.1
+  flutter_bloc: ^9.0.0
+  bloc: ^9.0.0
 
   # Local storage
   hive: ^2.2.3
@@ -70,6 +71,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/translations/
+    - assets/google-speech/google.json
     - assets/images/
     - .env
     

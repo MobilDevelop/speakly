@@ -49,7 +49,7 @@ class BottomBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(AppIcons.resources,height: ScreenSize.h30,color: index==1? AppTheme.colors.primary:AppTheme.colors.grey1),
-                  Text("Resources",style: AppTheme.data.textTheme.bodyLarge!.copyWith(color: index==1? AppTheme.colors.primary:AppTheme.colors.grey1))
+                  Text("Resources",maxLines: 1,style: AppTheme.data.textTheme.bodyLarge!.copyWith(color: index==1? AppTheme.colors.primary:AppTheme.colors.grey1))
                 ],
               ),
             ),
@@ -65,7 +65,7 @@ class BottomBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(AppIcons.progress,height: ScreenSize.h30,color: index==2? AppTheme.colors.primary:AppTheme.colors.grey1),
-                  Text("Progress",style: AppTheme.data.textTheme.bodyLarge!.copyWith(color: index==2? AppTheme.colors.primary:AppTheme.colors.grey1))
+                  Text("Progress",maxLines: 1, style: AppTheme.data.textTheme.bodyLarge!.copyWith(color: index==2? AppTheme.colors.primary:AppTheme.colors.grey1))
                 ],
               ),
             ),

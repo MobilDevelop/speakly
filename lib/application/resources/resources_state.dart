@@ -1,3 +1,3 @@
 abstract class ResourcesState {}
 
-final class ResourcesInitial extends ResourcesState {}
+ class ResourcesInitial extends ResourcesState {}

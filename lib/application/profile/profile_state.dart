@@ -1,3 +1,3 @@
 abstract class ProfileState {}
 
-final class ProfileInitial extends ProfileState {}
+ class ProfileInitial extends ProfileState {}
